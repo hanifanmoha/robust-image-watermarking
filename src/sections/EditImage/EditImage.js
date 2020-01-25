@@ -8,7 +8,7 @@ const EditImage = ({className}) => {
   let title = 'Edit Image'
   return (
     <Section title={title} className={cx(className, styles.root)} id='edit-image'>
-      <img src={Image} alt='Watermarked Image' className={styles.watermarkedImage} />
+      <img src={Image} alt='Watermarked' className={styles.watermarkedImage} />
     </Section>
   );
 }
