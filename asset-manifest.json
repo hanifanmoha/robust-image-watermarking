@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "hanifanm.github.io/robust-image-watermarking/static/css/main.aea63899.chunk.css",
-    "main.js": "hanifanm.github.io/robust-image-watermarking/static/js/main.49fe5dcb.chunk.js",
-    "main.js.map": "hanifanm.github.io/robust-image-watermarking/static/js/main.49fe5dcb.chunk.js.map",
-    "runtime-main.js": "hanifanm.github.io/robust-image-watermarking/static/js/runtime-main.93c58816.js",
-    "runtime-main.js.map": "hanifanm.github.io/robust-image-watermarking/static/js/runtime-main.93c58816.js.map",
-    "static/js/2.b76dcec7.chunk.js": "hanifanm.github.io/robust-image-watermarking/static/js/2.b76dcec7.chunk.js",
-    "static/js/2.b76dcec7.chunk.js.map": "hanifanm.github.io/robust-image-watermarking/static/js/2.b76dcec7.chunk.js.map",
-    "index.html": "hanifanm.github.io/robust-image-watermarking/index.html",
-    "precache-manifest.f06d91727ace8aa3ffd07ce079da77b4.js": "hanifanm.github.io/robust-image-watermarking/precache-manifest.f06d91727ace8aa3ffd07ce079da77b4.js",
-    "service-worker.js": "hanifanm.github.io/robust-image-watermarking/service-worker.js",
-    "static/css/main.aea63899.chunk.css.map": "hanifanm.github.io/robust-image-watermarking/static/css/main.aea63899.chunk.css.map",
-    "static/js/2.b76dcec7.chunk.js.LICENSE": "hanifanm.github.io/robust-image-watermarking/static/js/2.b76dcec7.chunk.js.LICENSE"
+    "main.css": "/robust-image-watermarking/static/css/main.aea63899.chunk.css",
+    "main.js": "/robust-image-watermarking/static/js/main.f41f4a6d.chunk.js",
+    "main.js.map": "/robust-image-watermarking/static/js/main.f41f4a6d.chunk.js.map",
+    "runtime-main.js": "/robust-image-watermarking/static/js/runtime-main.f412e201.js",
+    "runtime-main.js.map": "/robust-image-watermarking/static/js/runtime-main.f412e201.js.map",
+    "static/js/2.b76dcec7.chunk.js": "/robust-image-watermarking/static/js/2.b76dcec7.chunk.js",
+    "static/js/2.b76dcec7.chunk.js.map": "/robust-image-watermarking/static/js/2.b76dcec7.chunk.js.map",
+    "index.html": "/robust-image-watermarking/index.html",
+    "precache-manifest.8484df89bbb613080aab014c60fe4b2f.js": "/robust-image-watermarking/precache-manifest.8484df89bbb613080aab014c60fe4b2f.js",
+    "service-worker.js": "/robust-image-watermarking/service-worker.js",
+    "static/css/main.aea63899.chunk.css.map": "/robust-image-watermarking/static/css/main.aea63899.chunk.css.map",
+    "static/js/2.b76dcec7.chunk.js.LICENSE": "/robust-image-watermarking/static/js/2.b76dcec7.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.93c58816.js",
+    "static/js/runtime-main.f412e201.js",
     "static/js/2.b76dcec7.chunk.js",
     "static/css/main.aea63899.chunk.css",
-    "static/js/main.49fe5dcb.chunk.js"
+    "static/js/main.f41f4a6d.chunk.js"
   ]
 }
