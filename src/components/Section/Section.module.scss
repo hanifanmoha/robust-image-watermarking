@@ -1,12 +1,22 @@
 .root {
-  margin-bottom: 24px;
+  min-height: 90vh;
+  padding-top: 24px;
+  margin-bottom: 100px;
   &:last-child {
     margin-bottom: 0;
   }
 }
 
 .title {
-  border-bottom: 1px solid #000;
   padding-bottom: 8px;
-  margin-bottom: 16px;
+}
+
+.underline {
+  border-bottom: 1px solid #000;
+  width: 30%;
+  margin-bottom: 48px;
+}
+
+.subsections {
+  display: flex;
 }

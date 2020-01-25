@@ -3,8 +3,18 @@ import React, { useState } from 'react'
 import cx from 'classnames'
 import Section from '../../components/Section/Section';
 import ImageOption from '../../components/ImageOption/ImageOption';
-
+import SubSection from '../../components/SubSection/SubSection';
 import Logo from './logo.png'
+
+const SubSection1 = () => {
+  return (
+    <SubSection>
+      <p>Select a watermark to be embedded to the cover image.</p>
+      <br/>
+      <p>A robust algorithm have to prevent the watermark get tampered as the cover image get edited.</p>
+    </SubSection>
+  )
+}
 
 const SelectWatermark = ({ className }) => {
   let title = 'Select Watermark'
@@ -18,14 +28,18 @@ const SelectWatermark = ({ className }) => {
 
   return (
     <Section title={title} className={cx(className, styles.root)} id='select-image'>
-      <div className={styles.images}>
-        {logoList.map(({ logo, key }) => <ImageOption
-          key={key}
-          image={logo}
-          onSelectImage={() => selectLogo({ logo, key })}
-          isSelected={key === selectedLogoKey}
-        />)}
-      </div>
+      <SubSection1 />
+      <SubSection>
+        <div className={styles.images}>
+          {logoList.map(({ logo, key }) => <ImageOption
+            className={styles.imageOption}
+            key={key}
+            image={logo}
+            onSelectImage={() => selectLogo({ logo, key })}
+            isSelected={key === selectedLogoKey}
+          />)}
+        </div>
+      </SubSection>
     </Section>
   );
 }
@@ -40,4 +54,5 @@ const logoList = [
   { key: 5, logo: Logo },
   { key: 6, logo: Logo },
   { key: 7, logo: Logo },
+  { key: 8, logo: Logo },
 ]
