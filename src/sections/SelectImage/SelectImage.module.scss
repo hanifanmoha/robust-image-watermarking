@@ -7,7 +7,22 @@
 }
 
 .imageOption {
-  width: 150px;
-  height: 150px;
-  margin: 0 16px 16px 0;
+  width: 100px;
+  height: 100px;
+  margin: 0 16px 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.selectedImageContainer {
+  background-color: #000;
+}
+
+.selectedImage {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 200px;
+  height: 200px;
 }
