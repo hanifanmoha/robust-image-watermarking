@@ -1,39 +1,28 @@
 import styles from './SelectImage.module.scss'
 import React, { useState } from 'react'
 import cx from 'classnames'
+import { connect } from 'react-redux'
 import Section from '../../components/Section/Section'
 import ImageOption from '../../components/ImageOption/ImageOption'
 import Image from './image.png'
 import SubSection from '../../components/SubSection/SubSection';
+import SelectImageDescription from './SelectImageDescription';
 
-const SubSection1 = () => {
-  return (
-    <SubSection>
-      <p>Select one image that you want to protect as an example.</p>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <p>In this example, the image is compressed to make the computation easier.</p>
-      <br/>
-      <p>Let's be kind to our computer!</p>
-    </SubSection>
-  )
-}
-
-const SelectImage = ({ className }) => {
+const SelectImage = ({ className, state, dispatch }) => {
   let title = 'Select Cover Image'
   let [selectedImageKey, setSelectedImageKey] = useState(0)
-  let [selectedImage, setSelectedImage] = useState()
 
   let selectImage = ({ key, image }) => {
     setSelectedImageKey(key)
-    setSelectedImage(image)
+    dispatch({
+      type: 'SET_COVER_IMAGE',
+      payload: image
+    })
   }
 
   return (
     <Section title={title} className={cx(className, styles.root)} id='select-image'>
-      <SubSection1 />
+      <SelectImageDescription />
       <SubSection>
         <div className={styles.images}>
           {imageList.map(({ image, key }) => <ImageOption
@@ -49,7 +38,10 @@ const SelectImage = ({ className }) => {
   );
 }
 
-export default SelectImage;
+export default connect(
+  state => ({ state }),
+  dispatch => ({ dispatch })
+)(SelectImage);
 
 const imageList = [
   { key: 1, image: Image },

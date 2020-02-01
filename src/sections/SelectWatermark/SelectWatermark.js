@@ -1,34 +1,28 @@
 import styles from './SelectWatermark.module.scss'
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import cx from 'classnames'
 import Section from '../../components/Section/Section';
 import ImageOption from '../../components/ImageOption/ImageOption';
 import SubSection from '../../components/SubSection/SubSection';
 import Logo from './logo.png'
+import SelectImageDescription from '../SelectImage/SelectImageDescription';
 
-const SubSection1 = () => {
-  return (
-    <SubSection>
-      <p>Select a watermark to be embedded to the cover image.</p>
-      <br/>
-      <p>A robust algorithm have to prevent the watermark get tampered as the cover image get edited.</p>
-    </SubSection>
-  )
-}
-
-const SelectWatermark = ({ className }) => {
+const SelectWatermark = ({ className, state, dispatch }) => {
   let title = 'Select Watermark'
   let [selectedLogoKey, setSelectedLogoKey] = useState(0)
-  let [selectedLogo, setSelectedLogo] = useState()
 
   let selectLogo = ({ key, logo }) => {
     setSelectedLogoKey(key)
-    setSelectedLogo(logo)
+    dispatch({
+      type: 'SET_WATERMARK',
+      payload: logo
+    })
   }
 
   return (
     <Section title={title} className={cx(className, styles.root)} id='select-image'>
-      <SubSection1 />
+      <SelectImageDescription />
       <SubSection>
         <div className={styles.images}>
           {logoList.map(({ logo, key }) => <ImageOption
@@ -44,7 +38,10 @@ const SelectWatermark = ({ className }) => {
   );
 }
 
-export default SelectWatermark;
+export default connect(
+  state => ({ state }),
+  dispatch => ({ dispatch })
+)(SelectWatermark);
 
 const logoList = [
   { key: 1, logo: Logo },
