@@ -1,4 +1,3 @@
-import getPixels from 'get-pixels'
 import { loadPixel } from '../../util/LoadPixel'
 
 import Airplane from '../../images/cover/airplane.png'
