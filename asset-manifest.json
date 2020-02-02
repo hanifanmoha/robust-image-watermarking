@@ -1,22 +1,31 @@
 {
   "files": {
-    "main.css": "/robust-image-watermarking/static/css/main.aea63899.chunk.css",
-    "main.js": "/robust-image-watermarking/static/js/main.f41f4a6d.chunk.js",
-    "main.js.map": "/robust-image-watermarking/static/js/main.f41f4a6d.chunk.js.map",
-    "runtime-main.js": "/robust-image-watermarking/static/js/runtime-main.f412e201.js",
-    "runtime-main.js.map": "/robust-image-watermarking/static/js/runtime-main.f412e201.js.map",
-    "static/js/2.b76dcec7.chunk.js": "/robust-image-watermarking/static/js/2.b76dcec7.chunk.js",
-    "static/js/2.b76dcec7.chunk.js.map": "/robust-image-watermarking/static/js/2.b76dcec7.chunk.js.map",
+    "main.css": "/robust-image-watermarking/static/css/main.1dd0f4dd.chunk.css",
+    "main.js": "/robust-image-watermarking/static/js/main.88d4b379.chunk.js",
+    "main.js.map": "/robust-image-watermarking/static/js/main.88d4b379.chunk.js.map",
+    "runtime-main.js": "/robust-image-watermarking/static/js/runtime-main.b181f960.js",
+    "runtime-main.js.map": "/robust-image-watermarking/static/js/runtime-main.b181f960.js.map",
+    "static/js/2.5191a80c.chunk.js": "/robust-image-watermarking/static/js/2.5191a80c.chunk.js",
+    "static/js/2.5191a80c.chunk.js.map": "/robust-image-watermarking/static/js/2.5191a80c.chunk.js.map",
     "index.html": "/robust-image-watermarking/index.html",
-    "precache-manifest.8484df89bbb613080aab014c60fe4b2f.js": "/robust-image-watermarking/precache-manifest.8484df89bbb613080aab014c60fe4b2f.js",
+    "precache-manifest.5fd2714b154a0a5815570051f3a949cf.js": "/robust-image-watermarking/precache-manifest.5fd2714b154a0a5815570051f3a949cf.js",
     "service-worker.js": "/robust-image-watermarking/service-worker.js",
-    "static/css/main.aea63899.chunk.css.map": "/robust-image-watermarking/static/css/main.aea63899.chunk.css.map",
-    "static/js/2.b76dcec7.chunk.js.LICENSE": "/robust-image-watermarking/static/js/2.b76dcec7.chunk.js.LICENSE"
+    "static/css/main.1dd0f4dd.chunk.css.map": "/robust-image-watermarking/static/css/main.1dd0f4dd.chunk.css.map",
+    "static/js/2.5191a80c.chunk.js.LICENSE": "/robust-image-watermarking/static/js/2.5191a80c.chunk.js.LICENSE",
+    "static/media/airplane.png": "/robust-image-watermarking/static/media/airplane.e3ca8dfa.png",
+    "static/media/baboon.png": "/robust-image-watermarking/static/media/baboon.005fdd6b.png",
+    "static/media/barbara.png": "/robust-image-watermarking/static/media/barbara.5b384898.png",
+    "static/media/boat.png": "/robust-image-watermarking/static/media/boat.d3001a4e.png",
+    "static/media/fruits.png": "/robust-image-watermarking/static/media/fruits.a5aab461.png",
+    "static/media/goldhill.png": "/robust-image-watermarking/static/media/goldhill.d6950965.png",
+    "static/media/lena.png": "/robust-image-watermarking/static/media/lena.d0faf11d.png",
+    "static/media/peppers.png": "/robust-image-watermarking/static/media/peppers.914b0bfd.png",
+    "static/media/zelda.png": "/robust-image-watermarking/static/media/zelda.d8dd285e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f412e201.js",
-    "static/js/2.b76dcec7.chunk.js",
-    "static/css/main.aea63899.chunk.css",
-    "static/js/main.f41f4a6d.chunk.js"
+    "static/js/runtime-main.b181f960.js",
+    "static/js/2.5191a80c.chunk.js",
+    "static/css/main.1dd0f4dd.chunk.css",
+    "static/js/main.88d4b379.chunk.js"
   ]
 }
