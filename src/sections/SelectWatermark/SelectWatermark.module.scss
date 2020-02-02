@@ -9,5 +9,16 @@
 .imageOption {
   width: 80px;
   height: 80px;
-  margin: 0 16px 16px 0;
+  margin: 0 16px 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.selectedLogoContainer {
+  background-color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 120px;
 }
