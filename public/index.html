@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/image24.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/image24.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +22,31 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Robust Image Watermarking</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>Robust Image Watermarking</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <style>
+      #root {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+      }
+
+      #loading {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+    <h3>Loading something awesome ...</h3>
+    <div id="loading"></div>
+  </div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +56,60 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+  <script>
+    let o1, r1, t1
+    let o2, r2, t2
+    let o3
+    let hist = []
+
+    function setup() {
+      let canvas = createCanvas(600, 300)
+      canvas.parent('loading')
+      o1 = createVector(100, 150)
+      r1 = 75
+      t1 = 0
+      r2 = 20
+      t2 = 0
+    }
+
+    function draw() {
+      background(255)
+      strokeWeight(2)
+      stroke(0)
+      noFill()
+      line(0, 150, width, 150)
+      circle(o1.x, o1.y, 2 * r1, 2 * r1)
+
+      let x1 = r1 * cos(t1)
+      let y1 = r1 * sin(t1)
+      line(o1.x, o1.y, o1.x + x1, o1.y + y1)
+
+      o2 = createVector(o1.x + x1, o1.y + y1)
+      circle(o2.x, o2.y, 2 * r2, 2 * r2)
+      let x2 = r2 * cos(t2)
+      let y2 = r2 * sin(t2)
+
+      o3 = createVector(o2.x + x2, o2.y + y2)
+      strokeWeight(8)
+      stroke(255, 0, 0)
+      point(o3.x, o3.y)
+
+      t1 -= PI / 200
+      t2 += PI * 3 / 200
+
+      strokeWeight(2)
+      stroke(0)
+      line(250, 150, 250, o3.y)
+
+      hist = [o3.y, ...hist.slice(0, 349)]
+
+      strokeWeight(2)
+      stroke(255, 0, 0)
+      for (let i = 0; i < hist.length - 1; i++) {
+        line(250 + i, hist[i], 251 + i, hist[i + 1])
+      }
+    }
+  </script>
+</body>
+
 </html>

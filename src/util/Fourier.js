@@ -45,17 +45,34 @@ function iTransform2D(freqs) {
   return res
 }
 
+function embedPixel(img, pixel) {
+  let N = img.length
+  let M = img[0].length
+  for (let y = 0; y < N; y++) {
+    for (let x = 0; x < M; x++) {
+      // if (y === 0 || y === N - 1 || x === 0 || x === M - 1) {
+      //   img[y][x] = pixel
+      // }
+      // if ((x === 3 || x === 4) && (y === 3 || y === 4)) {
+      //   img[y][x] = pixel
+      // }
+    }
+  }
+  return img
+}
+
 function embed(cover, watermark, statusCallback) {
   let N = cover.length
   let M = cover[0].length
   let result = create2D(M, N)
-  for (let y = 0; y < N; y += 8) {
-    for (let x = 0; x < M; x += 8) {
+  for (let yy = 0; yy < N / 8; yy++) {
+    for (let xx = 0; xx < M / 8; xx++) {
+      let y = yy * 8
+      let x = xx * 8
       let img = cut2D(cover, x, x + 8, y, y + 8)
       let transformedImg = transform2D(img)
-      console.log(transformedImg)
+      transformedImg = embedPixel(transformedImg, watermark[yy][xx])
       let inversedImg = iTransform2D(transformedImg)
-      console.log(transformedImg)
       put2D(result, abs2D(inversedImg), x, y)
     }
   }
