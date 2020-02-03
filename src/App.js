@@ -9,6 +9,7 @@ import SelectWatermark from './sections/SelectWatermark/SelectWatermark';
 import EditImage from './sections/EditImage/EditImage';
 import Footer from './sections/Footer/Footer';
 import ExtractWatermark from './sections/ExtractWatermark/ExtractWatermark';
+import EmbedWatermark from './sections/EmbedWatermark/EmbedWatermark';
 
 const App = ({ className }) => {
   return (
@@ -17,6 +18,7 @@ const App = ({ className }) => {
         <div className={cx(styles.container)}>
           <SelectImage />
           <SelectWatermark />
+          <EmbedWatermark />
           <EditImage />
           <ExtractWatermark />
           <Footer />
