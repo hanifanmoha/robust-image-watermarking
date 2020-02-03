@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cc1c013037b6ebdeeaf7f4d2b9e92c7",
+    "revision": "edf04aa7974bd08a33da88a13d06b011",
     "url": "/robust-image-watermarking/index.html"
   },
   {

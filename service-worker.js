@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/robust-image-watermarking/precache-manifest.c02ee75e92ad2e3583a169895c542b13.js"
+  "/robust-image-watermarking/precache-manifest.e19a3cddc5829e9f3563e56e0941d3e1.js"
 );
 
 self.addEventListener('message', (event) => {
