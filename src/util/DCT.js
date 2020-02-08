@@ -1,7 +1,7 @@
-import { create2D, cut2D, put2D, map2D, abs2D } from './ArrayUtil'
+import { create2D, cut2D, put2D } from './ArrayUtil'
 
 function c(v) {
-  if (v == 0) return 1 / Math.sqrt(2)
+  if (v === 0) return 1 / Math.sqrt(2)
   else return 1
 }
 
@@ -109,7 +109,8 @@ function extract(image) {
       let y = yy * FRAME_SIZE
       let x = xx * FRAME_SIZE
       let img = cut2D(image, x, x + FRAME_SIZE, y, y + FRAME_SIZE)
-      let extractedPixel = extractPixel(img)
+      let transformedImg = transform2D(img)
+      let extractedPixel = extractPixel(transformedImg)
       result[yy][xx] = extractedPixel
     }
   }

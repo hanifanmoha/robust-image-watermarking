@@ -1,11 +1,11 @@
 import styles from './EmbedWatermark.module.scss'
-import React, { useState } from 'react'
+import React from 'react'
 import cx from 'classnames'
 import P5Wrapper from 'react-p5-wrapper'
 import { connect } from 'react-redux'
 
 import * as dct from '../../util/DCT'
-
+import * as C from '../../util/Const'
 import Section from '../../components/Section/Section';
 import SubSection from '../../components/SubSection/SubSection';
 
@@ -15,7 +15,7 @@ const EmbedWatermark = ({ className, state, dispatch }) => {
   let startEmbed = () => {
     let watermarked = dct.embed(state.coverImagePixel, state.watermarkPixel)
     dispatch({
-      type: 'SET_WATERMARKED_IMAGE_PIXEL',
+      type: C.ACTION_SET_WATERMARKED_IMAGE_PIXEL,
       payload: watermarked
     })
   }
@@ -26,7 +26,7 @@ const EmbedWatermark = ({ className, state, dispatch }) => {
         <button className={styles.embedButton} onClick={startEmbed}>>> EMBED</button>
       </SubSection>
       <SubSection>
-          <P5Wrapper sketch={embedSketch} img={state.watermarkedImagePixel} />
+        <P5Wrapper sketch={embedSketch} img={state.watermarkedImagePixel} />
       </SubSection>
     </Section>
   );

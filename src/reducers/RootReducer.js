@@ -2,34 +2,40 @@ import { createStore, applyMiddleware } from "redux"
 import logger from 'redux-logger'
 
 import { create2D } from '../util/ArrayUtil'
-import { WATERMARK_SIZE, COVER_SIZE } from '../util/Const'
+import * as C from '../util/Const'
 
 const initialState = {
   coverImage : null,
   watermark : null,
-  coverImagePixel : create2D(COVER_SIZE, COVER_SIZE, 0),
-  watermarkPixel : create2D(WATERMARK_SIZE, WATERMARK_SIZE, 0),
-  watermarkedImagePixel : create2D(COVER_SIZE, COVER_SIZE, 0),
+  coverImagePixel : create2D(C.COVER_SIZE, C.COVER_SIZE, 0),
+  watermarkPixel : create2D(C.WATERMARK_SIZE, C.WATERMARK_SIZE, 0),
+  watermarkedImagePixel : create2D(C.COVER_SIZE, C.COVER_SIZE, 0),
+  extractedWatermarkPixel : create2D(C.WATERMARK_SIZE, C.WATERMARK_SIZE, 0)
 } 
 
 const RootReducer = (state=initialState, action) => {
   switch(action.type) {
-    case 'SET_COVER_IMAGE':
+    case C.ACTION_SET_COVER_IMAGE:
       return {
         ...state,
         coverImage: action.payload,
         coverImagePixel: action.payload.pixels,
       }
-    case 'SET_WATERMARK':
+    case C.ACTION_SET_WATERMARK:
       return {
         ...state,
         watermark: action.payload,
         watermarkPixel: action.payload.pixels,
       }
-    case 'SET_WATERMARKED_IMAGE_PIXEL':
+    case C.ACTION_SET_WATERMARKED_IMAGE_PIXEL:
       return {
         ...state,
         watermarkedImagePixel: action.payload
+      }
+    case C.ACTION_SET_EXTRACTED_WATERMARK:
+      return {
+        ...state,
+        extractedWatermarkPixel: action.payload
       }
     default:
       return {

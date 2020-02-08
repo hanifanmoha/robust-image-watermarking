@@ -1,9 +1,9 @@
 function create1D(length, val = 0) {
-  return [...Array(length)].map(() => val)
+  return [...Array(Math.floor(length))].map(() => val)
 }
 
 function create2D(width, height, val = 0) {
-  return [...Array(height)].map(() => create1D(width, val))
+  return [...Array(Math.floor(height))].map(() => create1D(Math.floor(width), val))
 }
 
 function cut2D(array, xstart, xend, ystart, yend) {
