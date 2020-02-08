@@ -19,7 +19,6 @@ const SelectImage = ({ className, state, dispatch }) => {
   useEffect(() => {
     let images = getInitialImages();
     setImageList(images)
-    selectImage(images[0])
     loadPixelImages(
       images,
       (newImages) => {
@@ -37,14 +36,13 @@ const SelectImage = ({ className, state, dispatch }) => {
   }
 
   let imgKey = state.coverImage ? state.coverImage.key : null
-  let imgPixels = state.coverImage && state.coverImage.isPixelLoaded ? state.coverImage.pixels : null
 
   return (
     <Section title={title} className={cx(className, styles.root)} id='select-image'>
       <SelectImageDescription />
       <SubSection>
         <div className={styles.selectedImageContainer}>
-          <P5Wrapper sketch={loadImageSketch} img={imgPixels} />
+          <P5Wrapper sketch={loadImageSketch} img={state.coverImagePixel} />
         </div>
         <HorizontalScroll>
           {imageList.map((imageData) => <ImageOption

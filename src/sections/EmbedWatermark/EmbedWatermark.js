@@ -4,7 +4,7 @@ import cx from 'classnames'
 import P5Wrapper from 'react-p5-wrapper'
 import { connect } from 'react-redux'
 
-import { embed } from '../../util/Fourier';
+import * as dct from '../../util/DCT'
 
 import Section from '../../components/Section/Section';
 import SubSection from '../../components/SubSection/SubSection';
@@ -12,18 +12,12 @@ import SubSection from '../../components/SubSection/SubSection';
 const EmbedWatermark = ({ className, state, dispatch }) => {
   let title = 'Embed Watermark'
 
-  let [toggle, setToggle] = useState(false)
-  let [cover, setCover] = useState(null)
-  let [watermark, setWatermark] = useState(null)
-
   let startEmbed = () => {
-    if(state.coverImage && state.coverImage.pixels && state.coverImage.pixels.length > 0) {
-      setCover(state.coverImage.pixels)
-    }
-    if(state.watermark && state.watermark.pixels && state.watermark.pixels.length > 0) {
-      setWatermark(state.watermark.pixels)
-    }
-    setToggle(!toggle)
+    let watermarked = dct.embed(state.coverImagePixel, state.watermarkPixel)
+    dispatch({
+      type: 'SET_WATERMARKED_IMAGE_PIXEL',
+      payload: watermarked
+    })
   }
 
   return (
@@ -32,7 +26,7 @@ const EmbedWatermark = ({ className, state, dispatch }) => {
         <button className={styles.embedButton} onClick={startEmbed}>>> EMBED</button>
       </SubSection>
       <SubSection>
-          <P5Wrapper sketch={embedSketch} watermark={watermark} cover={cover} toggle={toggle} />
+          <P5Wrapper sketch={embedSketch} img={state.watermarkedImagePixel} />
       </SubSection>
     </Section>
   );
@@ -46,19 +40,14 @@ export default connect(
 const embedSketch = p => {
 
   const SIZE = 200
-  let myToggle = false
   let imgEl
-  let embedStatus = ''
 
   p.setup = () => {
     p.createCanvas(SIZE, SIZE)
   }
 
-  p.myCustomRedrawAccordingToNewPropsHandler = ({ cover, watermark, toggle }) => {
-    if (cover && watermark && toggle !== myToggle) {
-      console.log('recalculate ...')
-      myToggle = toggle
-      let img = embed(cover, watermark, updateStatus)
+  p.myCustomRedrawAccordingToNewPropsHandler = ({ img }) => {
+    if (img) {
       let h = img.length
       let w = img[0].length
       let temp = p.createImage(w, h)
@@ -81,11 +70,6 @@ const embedSketch = p => {
     if (imgEl) {
       p.image(imgEl, 0, 0, SIZE, SIZE)
     }
-  }
-
-  function updateStatus(status) {
-    embedStatus = status
-    console.log(status)
   }
 
 }

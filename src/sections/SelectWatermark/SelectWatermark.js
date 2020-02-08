@@ -19,7 +19,6 @@ const SelectWatermark = ({ className, state, dispatch }) => {
   useEffect(() => {
     let logos = getInitialLogos();
     setLogoList(logos)
-    selectLogo(logos[0])
     loadPixelLogos(
       logos,
       (newLogos) => {
@@ -37,7 +36,6 @@ const SelectWatermark = ({ className, state, dispatch }) => {
   }
 
   let logoKey = state.watermark ? state.watermark.key : null
-  let logoPixels = state.watermark && state.watermark.isPixelLoaded ? state.watermark.pixels : null
 
 
   return (
@@ -45,7 +43,7 @@ const SelectWatermark = ({ className, state, dispatch }) => {
       <SelectImageDescription />
       <SubSection>
         <div className={styles.selectedLogoContainer}>
-          <P5Wrapper sketch={loadLogoSketch} img={logoPixels} />
+          <P5Wrapper sketch={loadLogoSketch} img={state.watermarkPixel} />
         </div>
         <HorizontalScroll>
           {logoList.map((logoData) => <ImageOption

@@ -1,10 +1,15 @@
-import { createStore, applyMiddleware } from "redux";
-import logger from 'redux-logger';
+import { createStore, applyMiddleware } from "redux"
+import logger from 'redux-logger'
+
+import { create2D } from '../util/ArrayUtil'
+import { WATERMARK_SIZE, COVER_SIZE } from '../util/Const'
 
 const initialState = {
   coverImage : null,
   watermark : null,
-  watermarkedImage : null
+  coverImagePixel : create2D(COVER_SIZE, COVER_SIZE, 0),
+  watermarkPixel : create2D(WATERMARK_SIZE, WATERMARK_SIZE, 0),
+  watermarkedImagePixel : create2D(COVER_SIZE, COVER_SIZE, 0),
 } 
 
 const RootReducer = (state=initialState, action) => {
@@ -12,17 +17,19 @@ const RootReducer = (state=initialState, action) => {
     case 'SET_COVER_IMAGE':
       return {
         ...state,
-        coverImage: action.payload
+        coverImage: action.payload,
+        coverImagePixel: action.payload.pixels,
       }
     case 'SET_WATERMARK':
       return {
         ...state,
-        watermark: action.payload
+        watermark: action.payload,
+        watermarkPixel: action.payload.pixels,
       }
-    case 'SET_WATERMARKED_IMAGE':
+    case 'SET_WATERMARKED_IMAGE_PIXEL':
       return {
         ...state,
-        watermarkedImage: action.payload
+        watermarkedImagePixel: action.payload
       }
     default:
       return {
