@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/robust-image-watermarking/static/css/main.7cdf9110.chunk.css",
-    "main.js": "/robust-image-watermarking/static/js/main.ccdb9edd.chunk.js",
-    "main.js.map": "/robust-image-watermarking/static/js/main.ccdb9edd.chunk.js.map",
+    "main.css": "/robust-image-watermarking/static/css/main.c17453c9.chunk.css",
+    "main.js": "/robust-image-watermarking/static/js/main.017f37f8.chunk.js",
+    "main.js.map": "/robust-image-watermarking/static/js/main.017f37f8.chunk.js.map",
     "runtime-main.js": "/robust-image-watermarking/static/js/runtime-main.b181f960.js",
     "runtime-main.js.map": "/robust-image-watermarking/static/js/runtime-main.b181f960.js.map",
-    "static/js/2.d351732e.chunk.js": "/robust-image-watermarking/static/js/2.d351732e.chunk.js",
-    "static/js/2.d351732e.chunk.js.map": "/robust-image-watermarking/static/js/2.d351732e.chunk.js.map",
+    "static/js/2.cf893235.chunk.js": "/robust-image-watermarking/static/js/2.cf893235.chunk.js",
+    "static/js/2.cf893235.chunk.js.map": "/robust-image-watermarking/static/js/2.cf893235.chunk.js.map",
     "index.html": "/robust-image-watermarking/index.html",
-    "precache-manifest.e19a3cddc5829e9f3563e56e0941d3e1.js": "/robust-image-watermarking/precache-manifest.e19a3cddc5829e9f3563e56e0941d3e1.js",
+    "precache-manifest.68c8d7cc6b0aefe7f55f1248e3858027.js": "/robust-image-watermarking/precache-manifest.68c8d7cc6b0aefe7f55f1248e3858027.js",
     "service-worker.js": "/robust-image-watermarking/service-worker.js",
-    "static/css/main.7cdf9110.chunk.css.map": "/robust-image-watermarking/static/css/main.7cdf9110.chunk.css.map",
-    "static/js/2.d351732e.chunk.js.LICENSE": "/robust-image-watermarking/static/js/2.d351732e.chunk.js.LICENSE",
+    "static/css/main.c17453c9.chunk.css.map": "/robust-image-watermarking/static/css/main.c17453c9.chunk.css.map",
+    "static/js/2.cf893235.chunk.js.LICENSE": "/robust-image-watermarking/static/js/2.cf893235.chunk.js.LICENSE",
     "static/media/airplane.png": "/robust-image-watermarking/static/media/airplane.e3ca8dfa.png",
     "static/media/baboon.png": "/robust-image-watermarking/static/media/baboon.005fdd6b.png",
     "static/media/barbara.png": "/robust-image-watermarking/static/media/barbara.5b384898.png",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b181f960.js",
-    "static/js/2.d351732e.chunk.js",
-    "static/css/main.7cdf9110.chunk.css",
-    "static/js/main.ccdb9edd.chunk.js"
+    "static/js/2.cf893235.chunk.js",
+    "static/css/main.c17453c9.chunk.css",
+    "static/js/main.017f37f8.chunk.js"
   ]
 }
