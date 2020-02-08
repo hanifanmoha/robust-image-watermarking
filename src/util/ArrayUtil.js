@@ -6,6 +6,10 @@ function create2D(width, height, val = 0) {
   return [...Array(Math.floor(height))].map(() => create1D(Math.floor(width), val))
 }
 
+function copy2D(array) {
+  return array.map(row => row.map(cell => cell))
+}
+
 function cut2D(array, xstart, xend, ystart, yend) {
   return array.slice(ystart, yend).map(row => row.slice(xstart, xend))
 }
@@ -44,6 +48,7 @@ function map2D(array, mapper) {
 
 export {
   create2D,
+  copy2D,
   cut2D,
   put2D,
   abs2D,

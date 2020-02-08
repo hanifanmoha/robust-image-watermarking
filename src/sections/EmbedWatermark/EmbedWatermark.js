@@ -18,15 +18,19 @@ const EmbedWatermark = ({ className, state, dispatch }) => {
       type: C.ACTION_SET_WATERMARKED_IMAGE_PIXEL,
       payload: watermarked
     })
+    dispatch({
+      type: C.ACTION_SET_EDITED_WATERMARKED_IMAGE_PIXEL,
+      payload: watermarked
+    })
   }
 
   return (
     <Section title={title} className={cx(className, styles.root)} id='edit-image'>
       <SubSection>
-        <button className={styles.embedButton} onClick={startEmbed}>>> EMBED</button>
+        <button className={styles.actionButton} onClick={startEmbed}>>> EMBED</button>
       </SubSection>
       <SubSection>
-        <P5Wrapper sketch={embedSketch} img={state.watermarkedImagePixel} />
+        <P5Wrapper sketch={sketch} img={state.watermarkedImagePixel} />
       </SubSection>
     </Section>
   );
@@ -37,7 +41,7 @@ export default connect(
   dispatch => ({ dispatch })
 )(EmbedWatermark);
 
-const embedSketch = p => {
+const sketch = p => {
 
   const SIZE = 200
   let imgEl

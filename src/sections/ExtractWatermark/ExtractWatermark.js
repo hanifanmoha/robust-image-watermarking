@@ -13,7 +13,7 @@ const ExtractWatermark = ({ className, state, dispatch }) => {
   let title = 'Extract Watermark'
 
   let startExtract = () => {
-    let extracted = dct.extract(state.watermarkedImagePixel)
+    let extracted = dct.extract(state.editedWatermarkedImagePixel)
     dispatch({
       type: C.ACTION_SET_EXTRACTED_WATERMARK,
       payload: extracted
@@ -23,7 +23,7 @@ const ExtractWatermark = ({ className, state, dispatch }) => {
   return (
     <Section title={title} className={cx(className, styles.root)} id='extract-watermark'>
       <SubSection>
-        <button className={styles.extractButton} onClick={startExtract}>>> EXTRACT</button>
+        <button className={styles.actionButton} onClick={startExtract}>>> EXTRACT</button>
       </SubSection>
       <SubSection>
         <P5Wrapper sketch={sketch} img={state.extractedWatermarkPixel} />
