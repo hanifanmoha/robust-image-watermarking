@@ -18,8 +18,34 @@
   cursor: pointer;
   width: 200px;
   display: block;
+  margin: 0 8px 8px 0;
 
   &:hover {
     background-color: green;
+  }
+}
+
+.actionButtonGreen {
+  background-color: #4CAF50;
+  border: 1px solid green;
+  &:hover {
+    background-color: green;
+  }
+}
+
+.actionButtonRed {
+  background-color: #f44336;
+  border: 1px solid #e42719;
+  &:hover {
+    background-color: #e42719;
+  }
+}
+
+.actionButtonInactive {
+  background-color: #e7e7e7;
+  border: 1px solid #acacac;
+  color: #000;
+  &:hover {
+    background-color: #acacac;
   }
 }

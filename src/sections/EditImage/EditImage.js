@@ -1,5 +1,5 @@
 import styles from './EditImage.module.scss'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
 import P5Wrapper from 'react-p5-wrapper'
 import { connect } from 'react-redux'
@@ -12,38 +12,72 @@ import * as C from '../../util/Const'
 const EditImage = ({ className, state, dispatch }) => {
   let title = 'Edit Image'
 
+  let [average3Active, setAverage3Active] = useState(true)
+  let [noiseActive, setNoiseActive] = useState(true)
+
+  useEffect(() => {
+    activateEditButton()
+  }, [state.watermarkedImagePixel])
+
+  let activateEditButton = () => {
+    setAverage3Active(true)
+    setNoiseActive(true)
+  }
+
+  let reset = () => {
+    dispatch({
+      type: C.ACTION_SET_EDITED_WATERMARKED_IMAGE_PIXEL,
+      payload: state.watermarkedImagePixel
+    })
+    activateEditButton()
+  }
+
   let average3 = () => {
+    if(!average3Active) return
     let edited = Editor.average3(state.editedWatermarkedImagePixel)
     dispatch({
       type: C.ACTION_SET_EDITED_WATERMARKED_IMAGE_PIXEL,
       payload: edited
     })
+    setAverage3Active()
   }
 
   let noise = () => {
-    let edited = Editor.noise(state.editedWatermarkedImagePixel, 0.05)
+    if(!noiseActive) return
+    let edited = Editor.noise(state.editedWatermarkedImagePixel, 0.01)
     dispatch({
       type: C.ACTION_SET_EDITED_WATERMARKED_IMAGE_PIXEL,
       payload: edited
     })
+    setNoiseActive()
   }
 
   return (
     <Section title={title} className={cx(className, styles.root)} id='edit-image'>
       <SubSection>
-        <button className={styles.actionButton} onClick={average3}>>> AVERAGING[3x3]</button>
-        <button className={styles.actionButton} onClick={noise}>>> NOISE 5%</button>
+        <button className={cx({
+          [styles.actionButton]: true,
+          [styles.actionButtonRed]: true
+        })} onClick={reset}>{'RESET <<'}</button>
+        <button className={cx({
+          [styles.actionButton]: true,
+          [styles.actionButtonInactive]: !average3Active
+        })} onClick={average3}>>> AVERAGING[3x3]</button>
+        <button className={cx({
+          [styles.actionButton]: true,
+          [styles.actionButtonInactive]: !noiseActive
+        })} onClick={noise}>>> NOISE 1%</button>
       </SubSection>
       <SubSection>
         <P5Wrapper sketch={sketch} img={state.editedWatermarkedImagePixel} />
       </SubSection>
-    </Section>
+    </Section >
   );
 }
 
 export default connect(
-  state => ({state}),
-  dispatch => ({dispatch})
+  state => ({ state }),
+  dispatch => ({ dispatch })
 )(EditImage);
 
 const sketch = p => {

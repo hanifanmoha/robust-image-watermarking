@@ -1,5 +1,5 @@
 import styles from './App.module.scss'
-import React from 'react'
+import React, { useEffect } from 'react'
 import cx from 'classnames'
 import { Provider } from 'react-redux'
 import store from './reducers/RootReducer'
@@ -12,6 +12,14 @@ import ExtractWatermark from './sections/ExtractWatermark/ExtractWatermark';
 import EmbedWatermark from './sections/EmbedWatermark/EmbedWatermark';
 
 const App = ({ className }) => {
+
+  useEffect(() => {
+  //   let element = document.getElementById('embed-watermark');
+  //   if(element) {
+  //     element.scrollIntoView();
+  //   }
+  }, [])
+
   return (
     <Provider store={store}>
       <div className={cx(className, styles.root)}>

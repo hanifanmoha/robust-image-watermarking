@@ -25,9 +25,19 @@ const EmbedWatermark = ({ className, state, dispatch }) => {
   }
 
   return (
-    <Section title={title} className={cx(className, styles.root)} id='edit-image'>
+    <Section title={title} className={cx(className, styles.root)} id='embed-watermark'>
       <SubSection>
         <button className={styles.actionButton} onClick={startEmbed}>>> EMBED</button>
+        <br />
+        <p>In this section, we will inject/embed the watermark to the cover image.</p>
+        <br/>
+        <br/>
+        <p>A good watermarking algorithm has to:</p>
+        <br/>
+        <ol>
+          <li>Keep the watermark even when the embedded image get tampered/ edited</li>
+          <li>Keep the cover image as similar as possible before and after embedding proecess</li>
+        </ol>
       </SubSection>
       <SubSection>
         <P5Wrapper sketch={sketch} img={state.watermarkedImagePixel} />

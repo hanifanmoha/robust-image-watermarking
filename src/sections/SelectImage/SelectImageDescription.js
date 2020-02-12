@@ -11,9 +11,7 @@ const SelectImageDescription = ({className}) => {
       <br/>
       <br/>
       <br/>
-      <p>In this example, the image is compressed to make the computation easier.</p>
-      <br/>
-      <p>Let's be kind to our computer!</p>
+      <p>In this example, we use image with size 256x256 pixels to make the computation easier.</p>
     </SubSection>
   )
 }

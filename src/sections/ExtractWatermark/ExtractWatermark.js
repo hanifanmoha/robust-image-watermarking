@@ -23,6 +23,11 @@ const ExtractWatermark = ({ className, state, dispatch }) => {
   return (
     <Section title={title} className={cx(className, styles.root)} id='extract-watermark'>
       <SubSection>
+        <p>Try to extract the watermark from the edited/tampered image</p>
+        <b/>
+        <b/>
+        <p>Compare it to your original watermark</p>
+        <br/>
         <button className={styles.actionButton} onClick={startExtract}>>> EXTRACT</button>
       </SubSection>
       <SubSection>

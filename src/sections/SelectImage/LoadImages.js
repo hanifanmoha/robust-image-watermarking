@@ -11,15 +11,15 @@ import Peppers from '../../images/cover/peppers.png'
 import Zelda from '../../images/cover/zelda.png'
 
 const getInitialImages = () => [
-  { key: 'airplane', image: Airplane, pixels: [], isPixelLoaded: false },
+  { key: 'peppers', image: Peppers, pixels: [], isPixelLoaded: false },
   { key: 'baboon', image: Baboon, pixels: [], isPixelLoaded: false },
   { key: 'barbara', image: Barbara, pixels: [], isPixelLoaded: false },
-  { key: 'boat', image: Boat, pixels: [], isPixelLoaded: false },
-  { key: 'fruits', image: Fruits, pixels: [], isPixelLoaded: false },
+  { key: 'zelda', image: Zelda, pixels: [], isPixelLoaded: false },
   { key: 'goldhill', image: Goldhill, pixels: [], isPixelLoaded: false },
+  { key: 'boat', image: Boat, pixels: [], isPixelLoaded: false },
   { key: 'lena', image: Lena, pixels: [], isPixelLoaded: false },
-  { key: 'peppers', image: Peppers, pixels: [], isPixelLoaded: false },
-  { key: 'zelda', image: Zelda, pixels: [], isPixelLoaded: false }
+  { key: 'airplane', image: Airplane, pixels: [], isPixelLoaded: false },
+  { key: 'fruits', image: Fruits, pixels: [], isPixelLoaded: false },
 ]
 
 const loadPixelImages = async (images, onFinish, onError) => {
