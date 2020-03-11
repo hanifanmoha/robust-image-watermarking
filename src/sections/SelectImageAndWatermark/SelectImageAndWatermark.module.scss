@@ -1,0 +1,31 @@
+.root {
+}
+
+.subsectionMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .coverImage {
+    width: 256px;
+    height: 256px;
+    margin-bottom: 20px;
+  }
+
+  .watermark {
+    width: 100px;
+    height: 100px;
+    margin: 78px;
+    margin-bottom: 98px;
+  }
+
+}
+
+.embedded {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

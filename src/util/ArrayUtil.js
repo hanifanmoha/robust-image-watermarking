@@ -46,6 +46,23 @@ function map2D(array, mapper) {
   })
 }
 
+function reshape3D(arr, N, M, O) {
+  let result = []
+  for(let i=0; i<N; i++) {
+    let row = []
+    for(let j=0; j<M; j++) {
+      let row2 = []
+      for(let k=0; k<O; k++) {
+        let index = (i * M + j) * O + k
+        row2.push(arr[index])
+      }
+      row.push(row2)
+    }
+    result.push(row)
+  }
+  return result
+}
+
 export {
   create2D,
   copy2D,
@@ -53,4 +70,5 @@ export {
   put2D,
   abs2D,
   map2D,
+  reshape3D,
 }
